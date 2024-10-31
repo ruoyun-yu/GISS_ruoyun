@@ -8,7 +8,7 @@ library(janitor)
 library(tmap)
 library(tmaptools)
 
-
+print('hello')
 #read data and check it
 #read the csv data
 GIIData <- read.csv(here::here("GISS_ruoyun", "gii_GLOBAL.csv"), header = TRUE, sep = ",", encoding = "latin1")
