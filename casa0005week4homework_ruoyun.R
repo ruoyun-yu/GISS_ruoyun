@@ -8,14 +8,12 @@ library(janitor)
 library(tmap)
 library(tmaptools)
 
-print('hello')
-print('123')
 #read data and check it
 #read the csv data
-GIIData <- read.csv(here::here("GISS_ruoyun", "gii_GLOBAL.csv"), header = TRUE, sep = ",", encoding = "latin1")
-GIIData <- read_csv(here::here("GISS_ruoyun", "gii_GLOBAL.csv"), locale = locale(encoding = "latin1"),na = "na")
+GIIData <- read.csv(here::here("gii_GLOBAL.csv"), header = TRUE, sep = ",", encoding = "latin1")
+GIIData <- read_csv(here::here("gii_GLOBAL.csv"), locale = locale(encoding = "latin1"),na = "na")
 #read the geojson data
-GlobalData <- st_read(here::here("GISS_ruoyun", "World_Countries_(Generalized)_9029012925078512962.geojson"))
+GlobalData <- st_read(here::here("World_Countries_(Generalized)_9029012925078512962.geojson"))
 #check the csv data 
 class(GIIData)
 head(GIIData)
@@ -60,14 +58,13 @@ colnames(GlobalData)
 merged_data <- left_join(GlobalData,GIIData,by=c("country"="country"))
 print(st_geometry_type(merged_data))
 
-
 #plot the map
 tmap_mode("plot")
 tm_shape(merged_data) +
   tm_polygons("difference_10_19", 
-              title = "difference_10_19", 
-              style = "quantile", 
-              palette = "Blues") +
-  tm_layout(main.title = "GII between 2010 and 2019", 
-            legend.outside = TRUE)
+              title = "Difference 10-19", 
+              style = "jenks", 
+              palette = "-RdYlBu", 
+              n=10)+
+  tm_layout(main.title="GII between 2010 and 2019",legend.outside=TRUE)
 
