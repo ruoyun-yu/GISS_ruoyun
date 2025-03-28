@@ -1,0 +1,129 @@
+---
+title: "ICEYE SAR satellites"
+author: "Ruoyun Yu"
+date: "2025/02/01"
+output:
+  xaringan::moon_reader:
+    css: ["xaringan-themer.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(base_color = "#43418A")
+```
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+#Content
+1. Who make it
+1. How does it work
+1. Advantages of it
+1. Application of it
+1. Reflection
+---
+
+```{r, echo=FALSE, out.width="100%", out.height="100%"}
+knitr::include_graphics('https://www.iceye.com/hubfs/Press_Releases/ICEYE_BAE_press_2.jpg')
+
+```
+---
+class: inverse, center, middle
+#Who developed it
+ICEYE was developed by ICEYE Ltd., a Finnish company. 
+
+It is now the world's largest commercial synthetic aperture radar (SAR) satellite constellation, consisting of 38 small satellites.
+
+---
+#How it works
+ICEYE satellites are active remote sensing satellites, meaning they can adjust the radar beam direction and width, change radar bandwidth, and work in collaboration between satellites to achieve multiple imaging modes. ICEYE has four imaging modes: Dwell, Spot, Strip, and Scan, which meet different observation needs.
+.pull-left[
+* **Dwell imaging mode**
+
+Ground resolutions: 25 cm, 50 cm, 1 m
+
+Scene size: 5 km x 5 km
+
+
+* **Spot mode**
+
+Ground resolution: up to 50 cm
+
+Scene size: up to 15 km x 15 km]
+
+
+.pull-right[
+* **Strip mode**
+
+Ground resolution: 3 m
+
+Scene size: 30 km x 50 km
+
+* **Scan mode**
+
+Ground resolution: 15 m
+
+Scene size: 840 km x 100 km]
+
+
+---
+#How it works
+**Dwell imaging mode**
+* __High-resolution imaging__: With a 1200 MHz radar bandwidth, the resolution is 25 cm.
+* __Long capture and imaging time__: ICEYE integrates reflection information from various angles to create a more complete image of the target. It can also capture from multiple angles and penetrate obstacles (like tree branches) to observe hidden targets.
+* __Dynamic observation__: An image stack is made into a video preview to observe movement.
+* Control of radar beam direction and scanning modes allows continuous targeting of a specific ground area. The orbit design ensures the repeat observation cycle meets target needs.
+
+---
+#Advantages of it
+**1. Independent of weather conditions**: 
+
+ICEYE satellites use Synthetic Aperture Radar (SAR), an active remote sensing technology that transmits microwave signals and receives reflected signals from targets to generate high-resolution images. Microwaves can penetrate clouds with minimal energy loss, so ICEYE can collect data in any weather conditions.
+
+
+**2. High revisit frequency**: 
+
+ICEYE’s global revisit time is less than 6 hours. Since ICEYE is made up of multiple satellites, each in different orbits, any location can be observed by several satellites. The satellites operate in low Earth orbit, allowing frequent data collection from the same location.
+
+---
+#Advantages of it
+**3. Low launch cost**: 
+
+ICEYE is made up of small satellites. The cost of launching each satellite is low, allowing for quick adjustments in the number and layout of satellites according to mission requirements.
+
+**4. High resolution**: 
+
+ICEYE uses SAR technology to simulate a large aperture through satellite high-speed motion and signal processing, improving resolution. Additionally, its Dwell imaging mode captures detailed object features through long exposure times. ICEYE also uses advanced signal processing technology to effectively separate noise from target signals, improving image clarity and resolution.
+
+---
+#Applications
+**1. Disaster monitoring**: Real-time flood extent data to help governments and rescue agencies respond quickly.
+
+**2. Intelligence gathering**: High-resolution images for tracking military facility and equipment movements.
+
+**3. Environmental protection**: Monitoring deforestation and vegetation recovery, providing data on glaciers, sea ice, and other natural terrain changes for climate change studies.
+
+**4. Agricultural monitoring**: Analyzing farmland conditions, crop growth, and soil moisture.
+
+**5. Risk management**: Providing satellite imagery before and after disasters for quick insurance claims verification.
+
+---
+#Applications
+Magdalena A. Lukosz used ICEYE data and Offset Tracking (OT) to monitor glacier surface motion, comparing the results with Sentinel-1 data. The study first registers SAR images from different times to align them spatially, then filters the data. Feature points are selected from the images, and the displacement between the two images is calculated. The displacement is then converted to speed based on the time interval between acquisitions.
+
+Compared to Sentinel-1 data, which averages pixels over larger areas, ICEYE’s higher resolution enables more precise detection of small-scale changes in glaciers, particularly in the glacier front area.
+
+---
+#Applications
+Ohto Nygren obtained SAR flood extent and depth estimation data from ICEYE, combining it with DLR's WSF population data and OSM’s building and infrastructure data. Using Python, a flood impact analysis and visualization model was developed. This model accurately shows flood extent and depth, combined with population distribution and building coverage data, to estimate the affected population.
+
+Since ICEYE is a SAR satellite, it can penetrate clouds and darkness, enabling the collection of flood extent and depth data.
+
+---
+
+

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>ICEYE SAR satellites</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ruoyun Yu" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# ICEYE SAR satellites
+]
+.author[
+### Ruoyun Yu
+]
+.date[
+### 2025/02/01
+]
+
+---
+
+
+
+
+
+#Content
+1. Who make it
+1. How does it work
+1. Advantages of it
+1. Application of it
+1. Reflection
+---
+
+&lt;img src="https://www.iceye.com/hubfs/Press_Releases/ICEYE_BAE_press_2.jpg" width="100%" height="100%" /&gt;
+---
+class: inverse, center, middle
+#Who developed it
+ICEYE was developed by ICEYE Ltd., a Finnish company. 
+
+It is now the world's largest commercial synthetic aperture radar (SAR) satellite constellation, consisting of 38 small satellites.
+
+---
+#How it works
+ICEYE satellites are active remote sensing satellites, meaning they can adjust the radar beam direction and width, change radar bandwidth, and work in collaboration between satellites to achieve multiple imaging modes. ICEYE has four imaging modes: Dwell, Spot, Strip, and Scan, which meet different observation needs.
+.pull-left[
+* **Dwell imaging mode**
+
+Ground resolutions: 25 cm, 50 cm, 1 m
+
+Scene size: 5 km x 5 km
+
+
+* **Spot mode**
+
+Ground resolution: up to 50 cm
+
+Scene size: up to 15 km x 15 km]
+
+
+.pull-right[
+* **Strip mode**
+
+Ground resolution: 3 m
+
+Scene size: 30 km x 50 km
+
+* **Scan mode**
+
+Ground resolution: 15 m
+
+Scene size: 840 km x 100 km]
+
+
+---
+#How it works
+**Dwell imaging mode**
+* __High-resolution imaging__: With a 1200 MHz radar bandwidth, the resolution is 25 cm.
+* __Long capture and imaging time__: ICEYE integrates reflection information from various angles to create a more complete image of the target. It can also capture from multiple angles and penetrate obstacles (like tree branches) to observe hidden targets.
+* __Dynamic observation__: An image stack is made into a video preview to observe movement.
+* Control of radar beam direction and scanning modes allows continuous targeting of a specific ground area. The orbit design ensures the repeat observation cycle meets target needs.
+
+---
+#Advantages of it
+**1. Independent of weather conditions**: 
+
+ICEYE satellites use Synthetic Aperture Radar (SAR), an active remote sensing technology that transmits microwave signals and receives reflected signals from targets to generate high-resolution images. Microwaves can penetrate clouds with minimal energy loss, so ICEYE can collect data in any weather conditions.
+
+
+**2. High revisit frequency**: 
+
+ICEYE’s global revisit time is less than 6 hours. Since ICEYE is made up of multiple satellites, each in different orbits, any location can be observed by several satellites. The satellites operate in low Earth orbit, allowing frequent data collection from the same location.
+
+---
+#Advantages of it
+**3. Low launch cost**: 
+
+ICEYE is made up of small satellites. The cost of launching each satellite is low, allowing for quick adjustments in the number and layout of satellites according to mission requirements.
+
+**4. High resolution**: 
+
+ICEYE uses SAR technology to simulate a large aperture through satellite high-speed motion and signal processing, improving resolution. Additionally, its Dwell imaging mode captures detailed object features through long exposure times. ICEYE also uses advanced signal processing technology to effectively separate noise from target signals, improving image clarity and resolution.
+
+---
+#Applications
+**1. Disaster monitoring**: Real-time flood extent data to help governments and rescue agencies respond quickly.
+
+**2. Intelligence gathering**: High-resolution images for tracking military facility and equipment movements.
+
+**3. Environmental protection**: Monitoring deforestation and vegetation recovery, providing data on glaciers, sea ice, and other natural terrain changes for climate change studies.
+
+**4. Agricultural monitoring**: Analyzing farmland conditions, crop growth, and soil moisture.
+
+**5. Risk management**: Providing satellite imagery before and after disasters for quick insurance claims verification.
+
+---
+#Applications
+Magdalena A. Lukosz used ICEYE data and Offset Tracking (OT) to monitor glacier surface motion, comparing the results with Sentinel-1 data. The study first registers SAR images from different times to align them spatially, then filters the data. Feature points are selected from the images, and the displacement between the two images is calculated. The displacement is then converted to speed based on the time interval between acquisitions.
+
+Compared to Sentinel-1 data, which averages pixels over larger areas, ICEYE’s higher resolution enables more precise detection of small-scale changes in glaciers, particularly in the glacier front area.
+
+---
+#Applications
+Ohto Nygren obtained SAR flood extent and depth estimation data from ICEYE, combining it with DLR's WSF population data and OSM’s building and infrastructure data. Using Python, a flood impact analysis and visualization model was developed. This model accurately shows flood extent and depth, combined with population distribution and building coverage data, to estimate the affected population.
+
+Since ICEYE is a SAR satellite, it can penetrate clouds and darkness, enabling the collection of flood extent and depth data.
+
+---
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
